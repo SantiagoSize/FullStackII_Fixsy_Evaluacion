@@ -6,122 +6,7 @@
     <title>Servicios - Fixsy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <style>
-        .service-logo {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .service-logo img {
-            max-width: 200px;
-        }
-        
-        .service-card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-card .card-body {
-            padding: 30px;
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #fd7e14;
-        }
-        
-        .step-indicator {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        
-        .step {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        
-        .step.active {
-            background-color: #fd7e14;
-            color: white;
-        }
-        
-        .form-section {
-            display: none;
-        }
-        
-        .form-section.active {
-            display: block;
-        }
-        
-        .mechanic-card {
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-        
-        .mechanic-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .rating {
-            color: #ffc107;
-        }
-        
-        .distance {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        
-        .service-type-btn {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            text-align: left;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            background: white;
-            transition: all 0.3s;
-        }
-        
-        .service-type-btn:hover, .service-type-btn.active {
-            border-color: #fd7e14;
-            background-color: rgba(253, 126, 20, 0.05);
-        }
-        
-        .service-type-btn i {
-            font-size: 1.5rem;
-            margin-right: 10px;
-            color: #fd7e14;
-        }
-        
-        .mechanic-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
     <header class="header">
@@ -132,7 +17,7 @@
                     <span>Fixsy</span>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="navbar-nav ms-auto">
@@ -141,16 +26,16 @@
                         <a class="nav-link" href="mecanicos.html">Mecánicos</a>
                         <a class="nav-link" href="registro.html">Registro</a>
                         <a class="nav-link" href="login.html">Login</a>
-                        </div>
                     </div>
                 </div>
+            </div>
         </nav>
     </header>
 
     <main class="container my-5">
         <!-- Logo centrado -->
         <div class="service-logo">
-            <img src="images/LogoFixsy.png" alt="Fixsy" class="img-fluid">
+            <img src="../assets/images/LogoFixsy.png" alt="Fixsy" class="img-fluid">
         </div>
         
         <h2 class="text-center mb-5">Nuestros Servicios</h2>
@@ -267,7 +152,7 @@
                         <div id="mecanicos-lista">
                             <!-- Mecánico 1 -->
                             <div class="mechanic-card d-flex align-items-center">
-                                <img src="images/mecanico1.png" alt="Mecánico 1" class="mechanic-img">
+                                <img src="../assets/images/mecanico1.jpg" alt="Mecánico 1" class="mechanic-img">
                                 <div class="flex-grow-1">
                                     <h5 class="mb-1">Carlos Rodríguez</h5>
                                     <div class="rating mb-1">
@@ -286,7 +171,7 @@
                             
                             <!-- Mecánico 2 -->
                             <div class="mechanic-card d-flex align-items-center">
-                                <img src="images/step2.png" alt="Mecánico 2" class="mechanic-img">
+                                <img src="../assets/images/step2.jpg" alt="Mecánico 2" class="mechanic-img">
                                 <div class="flex-grow-1">
                                     <h5 class="mb-1">Ana Martínez</h5>
                                     <div class="rating mb-1">
@@ -305,7 +190,7 @@
                             
                             <!-- Mecánico 3 -->
                             <div class="mechanic-card d-flex align-items-center">
-                                <img src="images/step3.png" alt="Mecánico 3" class="mechanic-img">
+                                <img src="../assets/images/step3.jpg" alt="Mecánico 3" class="mechanic-img">
                                 <div class="flex-grow-1">
                                     <h5 class="mb-1">Luis González</h5>
                                     <div class="rating mb-1">
@@ -348,6 +233,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Alternar entre tipos de servicio
         document.querySelectorAll('.service-type-btn').forEach(button => {

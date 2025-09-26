@@ -46,3 +46,118 @@ footer {
     min-width: 100%;
     min-height: 100%;
 }
+
+/* ESTILOS ESPECÍFICOS PARA SERVICIOS.HTML */
+.service-logo {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.service-logo img {
+    max-width: 200px;
+}
+
+.service-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card .card-body {
+    padding: 30px;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fd7e14;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.step.active {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.mechanic-card {
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.mechanic-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.rating {
+    color: #ffc107;
+}
+
+.distance {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.service-type-btn {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    background: white;
+    transition: all 0.3s;
+}
+
+.service-type-btn:hover, .service-type-btn.active {
+    border-color: #fd7e14;
+    background-color: rgba(253, 126, 20, 0.05);
+}
+
+.service-type-btn i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #fd7e14;
+}
+
+.mechanic-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
