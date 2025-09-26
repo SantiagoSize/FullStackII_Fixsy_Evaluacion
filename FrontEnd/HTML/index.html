@@ -15,10 +15,9 @@
                     <img src="../assets/images/SoloLogoF.png" alt="Fixsy" width="40">
                     Fixsy
                 </div>
-                <div class="navbar-nav ms-auto">
+                <div class="navbar-nav ms-auto" id="navbarLinks">
                     <a class="nav-link active" href="index.html">Inicio</a>
                     <a class="nav-link" href="asistencia.html">Servicios</a>
-                    <a class="nav-link" href="mecanicos.html">Mecánicos</a>
                     <a class="nav-link" href="registro.html">Registro</a>
                     <a class="nav-link" href="login.html">Login</a>
                 </div>
@@ -26,34 +25,27 @@
         </nav>
     </header>
 
-   <!-- Hero Section -->
-<section class="hero position-relative text-white py-5 overflow-hidden">
-    <!-- Video de fondo -->
-    <video autoplay muted loop class="position-absolute w-100 h-100" style="object-fit: cover; z-index: -1;">
-        <source src="../assets/video/mecanicoHero.mp4" type="video/mp4">
-        Tu navegador no soporta el video.
-    </video>
-    
-    <!-- Capa oscura sobre el video -->
-    <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.6; z-index: -1;"></div>
-    
-    <!-- Contenido de texto -->
-    <div class="container text-center position-relative" style="z-index: 1;">
-        <h1 class="display-4 fw-bold">Tu Mecánico de Confianza, Cuando lo Necesites</h1>
-        <p class="lead">Conectamos a conductores con mecánicos verificados para servicios rápidos, seguros y profesionales</p>
-        <div class="cta-buttons mt-4">
-            <a href="registro.html" class="btn btn-warning btn-lg me-3">Solicitar Servicio</a>
-            <a href="#como-funciona" class="btn btn-outline-light btn-lg">Cómo Funciona</a>
+    <!-- Hero Section -->
+    <section class="hero position-relative text-white py-5 overflow-hidden">
+        <video autoplay muted loop class="position-absolute w-100 h-100" style="object-fit: cover; z-index: -1;">
+            <source src="../assets/video/mecanicoHero.mp4" type="video/mp4">
+        </video>
+        <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.6; z-index: -1;"></div>
+        <div class="container text-center position-relative" style="z-index: 1;">
+            <h1 class="display-4 fw-bold">Tu Mecánico de Confianza, Cuando lo Necesites</h1>
+            <p class="lead">Conectamos a conductores con mecánicos verificados para servicios rápidos, seguros y profesionales</p>
+            <div class="cta-buttons mt-4">
+                <a href="registro.html" class="btn btn-warning btn-lg me-3">Solicitar Servicio</a>
+                <a href="#como-funciona" class="btn btn-outline-light btn-lg">Cómo Funciona</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- SERVICIOS CON CUADROS -->
     <section class="servicios py-5">
         <div class="container">
             <h2 class="text-center mb-5">Nuestros Servicios</h2>
             <div class="row">
-                <!-- Servicio 1 con cuadro -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm border-0 rounded-3 servicio-card">
                         <div class="card-body text-center p-4">
@@ -64,8 +56,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Servicio 2 con cuadro -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm border-0 rounded-3 servicio-card">
                         <div class="card-body text-center p-4">
@@ -76,8 +66,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Servicio 3 con cuadro -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm border-0 rounded-3 servicio-card">
                         <div class="card-body text-center p-4">
@@ -116,62 +104,43 @@
         </div>
     </section>
 
-<footer class="footer bg-dark text-white py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="d-flex align-items-center mb-3">
-                    <img src="../assets/images/SoloLogoF.png" alt="Fixsy" width="40">
-                    <h3 class="ms-2 mb-0">Fixsy</h3>
-                </div>
-                <p class="mb-3">Tu plataforma de confianza para servicios mecánicos profesionales y verificados.</p>
-                <div class="social-links">
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="../assets/images/SoloLogoF.png" alt="Fixsy" width="40">
+                        <h3 class="ms-2 mb-0">Fixsy</h3>
+                    </div>
+                    <p class="mb-3">Tu plataforma de confianza para servicios mecánicos profesionales y verificados.</p>
                 </div>
             </div>
-            
-            <div class="col-lg-6 mb-4">
-                <h5 class="mb-3">Contacto</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <i class="fas fa-map-marker-alt me-2"></i>
-                        <span class="text-white-50">Av. Principal 123, Santiago</span>
-                    </li>
-                    <li class="mb-2">
-                        <i class="fas fa-phone me-2"></i>
-                        <a href="tel:+56912345678" class="text-white-50 text-decoration-none">+56 9 1234 5678</a>
-                    </li>
-                    <li class="mb-2">
-                        <i class="fas fa-envelope me-2"></i>
-                        <a href="mailto:info@fixsy.cl" class="text-white-50 text-decoration-none">info@fixsy.cl</a>
-                    </li>
-                    <li class="mb-2">
-                        <i class="fas fa-clock me-2"></i>
-                        <span class="text-white-50">24/7 Disponible</span>
-                    </li>
-                </ul>
-            </div>
         </div>
-        
-        <hr class="my-4 bg-secondary">
-        
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0 text-white-50">&copy; 2025 Fixsy. Todos los derechos reservados.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <a href="#" class="text-white-50 text-decoration-none me-3">Política de Privacidad</a>
-                <a href="#" class="text-white-50 text-decoration-none me-3">Términos de Servicio</a>
-                <a href="#" class="text-white-50 text-decoration-none">Aviso Legal</a>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../JavaScript/validacion.js"></script>
+    <script>
+        // Detectar si hay usuario logueado y actualizar barra
+        window.addEventListener('load', function() {
+            const navbar = document.getElementById('navbarLinks');
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+            
+            if (usuarioActual) {
+                navbar.innerHTML = `
+                    <a class="nav-link active" href="index.html">Inicio</a>
+                    <a class="nav-link" href="asistencia.html">Servicios</a>
+                    <a class="nav-link" href="perfil.html">Perfil</a>
+                    <a class="nav-link" href="#" id="cerrarSesion">Cerrar Sesión</a>
+                `;
+
+                document.getElementById('cerrarSesion').addEventListener('click', function() {
+                    localStorage.removeItem('usuarioActual');
+                    location.reload();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
