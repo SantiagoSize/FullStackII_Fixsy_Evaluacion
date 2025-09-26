@@ -77,6 +77,7 @@
                                     <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesión</a></p>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -140,7 +141,84 @@
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/validacion.js"></script>
+
+    <script>
+        // Crear usuarios iniciales si no existen
+        if (!localStorage.getItem('usuariosFixsy')) {
+            const usuariosIniciales = [
+                { nombre: 'Santiago', email: 'santiago@email.com', telefono: '+56911111111', password: '123456', fechaRegistro: new Date().toISOString() },
+                { nombre: 'Matias', email: 'matias@email.com', telefono: '+56922222222', password: '123456', fechaRegistro: new Date().toISOString() },
+                { nombre: 'Sofia', email: 'sofia@email.com', telefono: '+56933333333', password: '123456', fechaRegistro: new Date().toISOString() }
+            ];
+            localStorage.setItem('usuariosFixsy', JSON.stringify(usuariosIniciales));
+        }
+
+        document.getElementById('formRegistro').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.toLowerCase().trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmarPassword = document.getElementById('confirmarPassword').value;
+            const terminos = document.getElementById('terminos').checked;
+
+            if (!validarFormulario(nombre, email, telefono, password, confirmarPassword, terminos)) return;
+
+            let usuarios = JSON.parse(localStorage.getItem('usuariosFixsy')) || [];
+
+            // Verificar si ya existe un usuario con ese email
+            const existe = usuarios.some(u => u.email === email);
+            if (existe) {
+                alert('Ya existe un usuario registrado con ese correo');
+                return;
+            }
+
+            const nuevoUsuario = {
+                nombre: nombre,
+                email: email,
+                telefono: telefono,
+                password: password,
+                fechaRegistro: new Date().toISOString()
+            };
+
+            usuarios.push(nuevoUsuario);
+            localStorage.setItem('usuariosFixsy', JSON.stringify(usuarios));
+
+            alert('Cuenta creada exitosamente');
+            window.location.href = 'login.html';
+        });
+
+        function validarFormulario(nombre, email, telefono, password, confirmarPassword, terminos) {
+            if (nombre.length < 2) {
+                alert('El nombre debe tener al menos 2 caracteres');
+                return false;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Ingresa un correo electrónico válido');
+                return false;
+            }
+            if (!/^(\+56\s?9\s?[0-9]{8}|9[0-9]{8})$/.test(telefono.replace(/\s/g, ''))) {
+                alert('Ingresa un teléfono válido');
+                return false;
+            }
+            if (password.length < 6) {
+                alert('La contraseña debe tener al menos 6 caracteres');
+                return false;
+            }
+            if (password !== confirmarPassword) {
+                alert('Las contraseñas no coinciden');
+                return false;
+            }
+            if (!terminos) {
+                alert('Debes aceptar los términos y condiciones');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>

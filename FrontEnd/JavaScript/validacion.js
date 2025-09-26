@@ -1,6 +1,7 @@
-document.getElementById('formRegistro').addEventListener('submit', function(event) {
+// Registro de usuario
+document.getElementById('formRegistro').addEventListener('submit', function(event) { 
     event.preventDefault();
-    
+
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
     const telefono = document.getElementById('telefono').value;
@@ -23,11 +24,12 @@ document.getElementById('formRegistro').addEventListener('submit', function(even
     let usuarios = JSON.parse(localStorage.getItem('usuariosFixsy')) || [];
     usuarios.push(usuario);
     localStorage.setItem('usuariosFixsy', JSON.stringify(usuarios));
-    
+
     alert('Cuenta creada exitosamente');
     window.location.href = 'login.html';
 });
 
+// Validaciones del formulario
 function validarFormulario(nombre, email, telefono, password, confirmarPassword, terminos) {
     if (nombre.trim().length < 2) {
         alert('El nombre debe tener al menos 2 caracteres');
@@ -61,3 +63,12 @@ function validarFormulario(nombre, email, telefono, password, confirmarPassword,
 
     return true;
 }
+
+// Copia esto en la consola del navegador antes de probar el login
+const usuariosIniciales = [
+    { nombre: 'Santiago', email: 'santiago@email.com', telefono: '+56911111111', password: '123456', fechaRegistro: new Date().toISOString() },
+    { nombre: 'Matias', email: 'matias@email.com', telefono: '+56922222222', password: '123456', fechaRegistro: new Date().toISOString() },
+    { nombre: 'Sofia', email: 'sofia@email.com', telefono: '+56933333333', password: '123456', fechaRegistro: new Date().toISOString() }
+];
+localStorage.setItem('usuariosFixsy', JSON.stringify(usuariosIniciales));
+

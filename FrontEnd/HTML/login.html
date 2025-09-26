@@ -5,34 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Fixsy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.html">FIXSY</a>
-                <div class="navbar-nav">
+                <div class="logo navbar-brand">
+                    <img src="../assets/images/SoloLogoF.png" alt="Fixsy" width="40">
+                    Fixsy
+                </div>
+                <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="asistencia.html">Servicios</a>
+                    <a class="nav-link" href="mecanicos.html">Mecánicos</a>
                     <a class="nav-link" href="registro.html">Registro</a>
+                    <a class="nav-link active" href="login.html">Login</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container my-5">
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-            <input type="email" class="form-control mb-2" placeholder="Email" required>
-            <input type="password" class="form-control mb-2" placeholder="Contraseña" required>
-            <button type="submit" class="btn btn-warning">Ingresar</button>
-        </form>
-    </main>
+    <section class="registro py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-lg border-0 rounded-3">
+                        <div class="card-body p-5">
+                            <h2 class="text-center mb-4">Iniciar Sesión</h2>
+                            <form id="formLogin">
+                                <div class="mb-3">
+                                    <label for="emailLogin" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="emailLogin" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="passwordLogin" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="passwordLogin" required>
+                                </div>
+                                <button type="submit" class="btn btn-warning w-100 py-2 fw-bold">Iniciar Sesión</button>
+                            </form>
+                            <div class="text-center mt-3">
+                                <p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>Contacto: info@fixsy.com</p>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JavaScript/validacion.js"></script>
+    <script>
+        // Crear usuarios iniciales si no existen
+        if (!localStorage.getItem('usuariosFixsy')) {
+            const usuariosIniciales = [
+                { nombre: 'Santiago', email: 'santiago@email.com', telefono: '+56911111111', password: '123456', fechaRegistro: new Date().toISOString() },
+                { nombre: 'Matias', email: 'matias@email.com', telefono: '+56922222222', password: '123456', fechaRegistro: new Date().toISOString() },
+                { nombre: 'Sofia', email: 'sofia@email.com', telefono: '+56933333333', password: '123456', fechaRegistro: new Date().toISOString() }
+            ];
+            localStorage.setItem('usuariosFixsy', JSON.stringify(usuariosIniciales));
+        }
 
-    <script src="js/auth.js"></script>
+        document.getElementById('formLogin').addEventListener('submit', function(e){
+            e.preventDefault();
+            const email = document.getElementById('emailLogin').value.toLowerCase().trim();
+            const password = document.getElementById('passwordLogin').value;
+
+            let usuarios = JSON.parse(localStorage.getItem('usuariosFixsy')) || [];
+            const usuarioEncontrado = usuarios.find(u => u.email.toLowerCase() === email && u.password === password);
+
+            if(usuarioEncontrado){
+                alert(`¡Bienvenido ${usuarioEncontrado.nombre}!`);
+                window.location.href = 'index.html'; // Redirige al home
+            } else {
+                alert('Correo o contraseña incorrectos');
+            }
+        });
+    </script>
 </body>
 </html>
